@@ -1,0 +1,349 @@
+/* =========================================================
+   TRAFFICVISION — ANALYTICS PAGE (COMMAND CENTER DASHBOARD THEME)
+   Colors: bg #090c10, card rgba(16,25,44,.65), accent #00d4ff
+   ========================================================= */
+
+.analytics-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #eef6ff;
+  box-sizing: border-box;
+}
+/* NOTE: no padding / min-height here — Layout's ".content" already
+   handles page padding (125px 30px 30px 30px). Adding it again here
+   was doubling the spacing and pushing the page way past 100vh,
+   which is what created the big empty gaps above/below the content. */
+
+/* HEADER */
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.analytics-header-title h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+}
+
+.analytics-header-title p {
+  color: #8da2c5;
+  font-size: 14px;
+  margin: 0;
+}
+
+.demo-flag {
+  color: #f59e0b;
+}
+
+.analytics-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.range-toggle {
+  display: flex;
+  background: rgba(16, 25, 44, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.range-toggle button {
+  border: none;
+  background: transparent;
+  color: #8da2c5;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.range-toggle button.active {
+  background: #00d4ff;
+  color: #071018;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(16, 25, 44, 0.65);
+  color: #00d4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn .spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00d4ff, #0891b2);
+  color: #071018;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* STAT CARDS
+   Fixed 4-column grid (same pattern as the main Dashboard's
+   .stats-grid) instead of auto-fit/minmax. auto-fit let each of the
+   4 cards stretch to fill huge amounts of empty width on large
+   screens, which is what was reading as "too much space". */
+.analytics-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 1400px) {
+  .analytics-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.analytics-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(16, 25, 44, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.analytics-stat-card .stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analytics-stat-card h5 {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+  color: #8da2c5;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.analytics-stat-card h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+/* TRAFFIC TREND + HISTORICAL INSIGHTS
+   Two separate full-width panels stacked on top of each other,
+   both spanning the same width as the header/stat cards above. */
+.trend-panel,
+.insights-panel {
+  width: 100%;
+}
+
+.insights-panel-body {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.insights-pie-wrap {
+  flex: 1 1 320px;
+  min-width: 280px;
+}
+
+.pie-caption {
+  text-align: center;
+  font-size: 12px;
+  color: #8da2c5;
+  margin-top: 6px;
+}
+
+.insights-list {
+  flex: 1 1 320px;
+  min-width: 280px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.glass-panel {
+  background: rgba(16, 25, 44, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.panel-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 14px;
+}
+
+.insights-list li {
+  background: rgba(0, 212, 255, 0.08);
+  border-left: 3px solid #00d4ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #c9d8ee;
+  line-height: 1.4;
+}
+
+/* HEATMAP */
+.heatmap-scroll {
+  overflow-x: auto;
+}
+
+.heatmap-hours-row,
+.heatmap-row {
+  display: grid;
+  /* Fixed 32px hour columns instead of 1fr — 1fr let each of the 24
+     cells stretch across the full panel width on large screens,
+     which spread the heatmap out and left big empty-looking gaps
+     between cells. Fixed width + the .heatmap-scroll overflow-x
+     wrapper keeps cells compact and lets the row scroll instead. */
+  grid-template-columns: 140px repeat(24, 32px);
+  width: max-content;
+  gap: 3px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.heatmap-road-label {
+  font-size: 12.5px;
+  color: #c9d8ee;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+.heatmap-hour-label {
+  font-size: 10px;
+  color: #8da2c5;
+  text-align: center;
+}
+
+.heatmap-cell {
+  height: 22px;
+  border-radius: 4px;
+}
+
+.heatmap-legend {
+  display: flex;
+  gap: 18px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: #8da2c5;
+}
+
+.heatmap-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.heatmap-legend i {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* ROAD PERFORMANCE TABLE */
+.performance-table-wrapper {
+  overflow-x: auto;
+}
+
+.performance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.performance-table th {
+  text-align: left;
+  color: #8da2c5;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.performance-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #eef6ff;
+}
+
+.pct-bar-wrapper {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  height: 20px;
+  width: 140px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.pct-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 6px;
+  opacity: 0.85;
+}
+
+.pct-bar-wrapper span {
+  position: relative;
+  z-index: 1;
+  margin-left: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+}

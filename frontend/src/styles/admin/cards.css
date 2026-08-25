@@ -1,0 +1,333 @@
+/*=================================================
+                GLASS CARD
+==================================================*/
+
+.glass-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:26px;
+
+    border-radius:22px;
+
+    background:rgba(18,23,35,.72);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    box-shadow:
+
+        inset 0 1px rgba(255,255,255,.05),
+
+        0 15px 45px rgba(0,0,0,.45);
+
+    transition:.35s;
+
+}
+
+.glass-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(0,245,212,.25);
+
+}
+
+.glass-shine{
+
+    position:absolute;
+
+    width:240px;
+
+    height:420px;
+
+    top:-150px;
+
+    left:-280px;
+
+    transform:rotate(28deg);
+
+    background:linear-gradient(
+
+        transparent,
+
+        rgba(255,255,255,.10),
+
+        transparent
+
+    );
+
+    transition:.9s;
+
+}
+
+.glass-card:hover .glass-shine{
+
+    left:140%;
+
+}
+
+/*=================================================
+                PREMIUM STAT CARD
+==================================================*/
+
+.stat-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+
+        180deg,
+
+        #131923,
+
+        #0d121b
+
+    );
+
+    border:1px solid rgba(255,255,255,.06);
+
+    min-height:170px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(255,255,255,.12);
+
+    box-shadow:
+
+        0 18px 40px rgba(0,0,0,.45);
+
+}
+
+/* top glowing strip */
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:var(--accent,#00F5D4);
+
+}
+
+/* glow */
+
+.card-glow{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.12;
+
+    filter:blur(90px);
+
+    transition:.4s;
+
+}
+
+.stat-card:hover .card-glow{
+
+    opacity:.22;
+
+}
+
+/* animated status */
+
+.status-dot{
+
+    position:absolute;
+
+    right:18px;
+
+    top:18px;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    box-shadow:0 0 18px currentColor;
+
+    animation:pulse 1.8s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.5);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*==============================*/
+
+.stat-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+}
+
+/*==============================*/
+
+.icon-circle{
+
+    width:74px;
+
+    height:74px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:2px solid;
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.icon-circle svg{
+
+    width:34px;
+
+    height:34px;
+
+    color:white;
+
+}
+
+/*==============================*/
+
+.sparkline{
+
+    opacity:.95;
+
+    margin-top:8px;
+
+}
+
+/*==============================*/
+
+.stat-bottom{
+
+    margin-top:18px;
+
+}
+
+.stat-bottom p{
+
+    color:#b7c4d4;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    margin-bottom:10px;
+
+}
+
+.stat-bottom h1{
+
+    color:#fff;
+
+    font-size:52px;
+
+    line-height:1;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.stat-bottom span{
+
+    color:#2cff90;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+/*==============================*/
+
+.stat-card:hover .sparkline{
+
+    transform:translateX(-6px);
+
+    transition:.4s;
+
+}
+
+.stat-card:hover .icon-circle{
+
+    transform:scale(1.08);
+
+    transition:.35s;
+
+}
+
+.stat-card:hover h1{
+
+    letter-spacing:1px;
+
+    transition:.3s;
+
+}
