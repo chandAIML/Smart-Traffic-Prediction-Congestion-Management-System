@@ -1,0 +1,1499 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/*==================================================
+Variables
+==================================================*/
+
+:root{
+
+    --bg:#06101f;
+
+    --card:rgba(16,25,44,.72);
+
+    --card2:#142847;
+
+    --primary:#00d4ff;
+
+    --green:#00ff95;
+
+    --orange:#ffb100;
+
+    --red:#ff4d67;
+
+    --text:#eef6ff;
+
+    --muted:#95a9c8;
+
+}
+
+/*==================================================
+Body
+==================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    overflow-x:hidden;
+
+    color:white;
+
+}
+
+/*==================================================
+Particles
+==================================================*/
+
+#tsparticles{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+}
+
+/*==================================================
+Dashboard
+==================================================*/
+
+.operator-dashboard{
+
+    min-height:100vh;
+
+    background:
+
+    radial-gradient(circle at top left,#00d4ff15,transparent 40%),
+
+    radial-gradient(circle at bottom right,#00ff9520,transparent 35%),
+
+    #06101f;
+
+}
+
+/*==================================================
+Topbar
+==================================================*/
+
+.operator-topbar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:500;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 35px;
+
+    backdrop-filter:blur(25px);
+
+    background:rgba(7,18,34,.7);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.top-left h1{
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+.top-left span{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+}
+
+.top-middle{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.search-box{
+
+    width:100%;
+
+    max-width:430px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 18px;
+
+    border-radius:15px;
+
+    background:#152440;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    color:white;
+
+}
+
+.search-box input::placeholder{
+
+    color:#8da2c5;
+
+}
+
+.top-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.clock{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    background:#13233f;
+
+}
+
+.icon-btn{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:#13233f;
+
+    transition:.35s;
+
+}
+
+.icon-btn:hover{
+
+    background:var(--primary);
+
+    color:#07111f;
+
+}
+
+.notification{
+
+    position:relative;
+
+}
+
+.badge{
+
+    position:absolute;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:var(--red);
+
+    color:white;
+
+    font-size:11px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    top:-6px;
+
+    right:-5px;
+
+}
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#13233f;
+
+    padding:8px 15px;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+}
+
+.profile span{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+/*==================================================
+Container
+==================================================*/
+
+.operator-container{
+
+    padding:35px;
+
+}
+
+/*==================================================
+Hero
+==================================================*/
+
+.hero{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:linear-gradient(135deg,#112240,#172d52);
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    right:-80px;
+
+    top:-100px;
+
+    background:#00d4ff12;
+
+}
+
+.hero h1{
+
+    font-size:40px;
+
+}
+
+.hero p{
+
+    margin-top:18px;
+
+    color:var(--muted);
+
+    max-width:620px;
+
+    line-height:1.8;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:30px;
+
+}
+
+.hero-buttons button{
+
+    padding:15px 24px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:var(--primary);
+
+    color:#07111f;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.hero-buttons .secondary{
+
+    background:transparent;
+
+    border:1px solid #33527f;
+
+    color:white;
+
+}
+
+.hero-buttons button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 25px #00d4ff55;
+
+}
+
+.hero-icon{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#00d4ff12;
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+Stats
+==================================================*/
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:22px;
+
+    margin-top:35px;
+
+}
+
+.glass-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:var(--card);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    padding:24px;
+
+    transition:.35s;
+
+}
+
+.glass-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 40px rgba(0,212,255,.18);
+
+}
+
+.glass-card .icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#152541;
+
+    margin-bottom:18px;
+
+}
+
+.glass-card h2{
+
+    font-size:34px;
+
+}
+
+.glass-card span{
+
+    color:var(--muted);
+
+}
+/*==================================================
+Main Layout
+==================================================*/
+
+.main-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:24px;
+
+    margin-top:30px;
+
+}
+
+/*==================================================
+Glass Shine Animation
+==================================================*/
+
+.shine{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.shine::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-45%;
+
+    width:60%;
+
+    height:300%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.08),
+
+        rgba(255,255,255,.35),
+
+        rgba(255,255,255,.08),
+
+        transparent
+
+    );
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+    pointer-events:none;
+
+}
+
+.shine:hover::before{
+
+    left:150%;
+
+}
+
+/*==================================================
+Section Header
+==================================================*/
+
+.section-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+    color:var(--primary);
+
+}
+
+.section-header h2{
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+/*==================================================
+Live Map
+==================================================*/
+
+.map-card{
+
+    min-height:420px;
+
+}
+
+.map-area{
+
+    position:relative;
+
+    width:100%;
+
+    height:330px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(#0b1b31,#13294b);
+
+}
+
+.grid-lines{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+
+    background-size:35px 35px;
+
+}
+
+.road{
+
+    position:absolute;
+
+    background:rgba(0,212,255,.45);
+
+    border-radius:100px;
+
+}
+
+.road1{
+
+    width:85%;
+
+    height:5px;
+
+    left:8%;
+
+    top:48%;
+
+}
+
+.road2{
+
+    width:5px;
+
+    height:85%;
+
+    left:45%;
+
+    top:8%;
+
+}
+
+.road3{
+
+    width:60%;
+
+    height:5px;
+
+    top:25%;
+
+    left:20%;
+
+    transform:rotate(18deg);
+
+}
+
+.road4{
+
+    width:55%;
+
+    height:5px;
+
+    bottom:25%;
+
+    left:28%;
+
+    transform:rotate(-20deg);
+
+}
+
+/*==================================================
+Map Pulses
+==================================================*/
+
+.pulse{
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:0 0 18px var(--green);
+
+    animation:pulse 2.4s infinite;
+
+}
+
+.pulse1{
+
+    top:22%;
+
+    left:35%;
+
+}
+
+.pulse2{
+
+    top:50%;
+
+    left:45%;
+
+}
+
+.pulse3{
+
+    top:70%;
+
+    left:60%;
+
+}
+
+.pulse4{
+
+    top:30%;
+
+    left:72%;
+
+}
+
+.pulse5{
+
+    top:78%;
+
+    left:22%;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+    70%{
+
+        transform:scale(2);
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:0;
+
+    }
+
+}
+
+/*==================================================
+AI Panel
+==================================================*/
+
+.ai-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.ai-message{
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:#132744;
+
+    color:#d6e8ff;
+
+    line-height:1.7;
+
+}
+
+.ai-message strong{
+
+    color:var(--green);
+
+}
+
+.ai-box{
+
+    background:#0f2039;
+
+    border-left:4px solid var(--primary);
+
+    padding:18px;
+
+    border-radius:14px;
+
+}
+
+.ai-box h4{
+
+    margin-bottom:10px;
+
+}
+
+.ai-box p{
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+}
+
+/*==================================================
+Signal Status
+==================================================*/
+
+.signal-card{
+
+    margin-top:25px;
+
+}
+
+.signal-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.signal{
+
+    background:#132744;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    padding:24px;
+
+}
+
+.signal h3{
+
+    margin-top:14px;
+
+}
+
+.signal p{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+}
+
+.green-light,
+
+.yellow-light,
+
+.red-light{
+
+    display:block;
+
+    width:26px;
+
+    height:26px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+}
+
+.green-light{
+
+    background:var(--green);
+
+    box-shadow:0 0 18px var(--green);
+
+    animation:blinkGreen 1.8s infinite;
+
+}
+
+.yellow-light{
+
+    background:var(--orange);
+
+    box-shadow:0 0 18px var(--orange);
+
+    animation:blinkYellow 1.4s infinite;
+
+}
+
+.red-light{
+
+    background:var(--red);
+
+    box-shadow:0 0 18px var(--red);
+
+    animation:blinkRed 1.1s infinite;
+
+}
+
+@keyframes blinkGreen{
+
+    50%{
+
+        opacity:.35;
+
+    }
+
+}
+
+@keyframes blinkYellow{
+
+    50%{
+
+        opacity:.25;
+
+    }
+
+}
+
+@keyframes blinkRed{
+
+    50%{
+
+        opacity:.2;
+
+    }
+
+}
+/*==================================================
+Bottom Layout
+==================================================*/
+
+.bottom-layout{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:24px;
+
+    margin-top:25px;
+
+}
+
+/*==================================================
+Camera Grid
+==================================================*/
+
+.camera-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.camera-box{
+
+    background:#132744;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.camera-box:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 10px 25px rgba(0,212,255,.2);
+
+}
+
+.camera-box svg{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.camera-box h4{
+
+    margin-bottom:10px;
+
+}
+
+.online{
+
+    color:var(--green);
+
+    font-weight:600;
+
+}
+
+.offline{
+
+    color:var(--red);
+
+    font-weight:600;
+
+}
+
+/*==================================================
+Incident Queue
+==================================================*/
+
+.incident{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px;
+
+    margin-bottom:12px;
+
+    border-radius:14px;
+
+    background:#132744;
+
+    transition:.3s;
+
+}
+
+.incident:hover{
+
+    transform:translateX(8px);
+
+    background:#193457;
+
+}
+
+.incident svg{
+
+    color:var(--red);
+
+}
+
+/*==================================================
+Operations Grid
+==================================================*/
+
+.operations-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+
+    margin-top:30px;
+
+}
+
+/*==================================================
+Emergency Units
+==================================================*/
+
+.unit{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:16px;
+
+    margin-bottom:14px;
+
+    border-radius:14px;
+
+    background:#132744;
+
+    transition:.3s;
+
+}
+
+.unit:hover{
+
+    transform:translateX(6px);
+
+    background:#183252;
+
+}
+
+.unit svg{
+
+    color:var(--green);
+
+}
+
+.unit span{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+}
+
+/*==================================================
+Traffic Density
+==================================================*/
+
+.density-item{
+
+    margin-bottom:24px;
+
+}
+
+.density-item span{
+
+    display:block;
+
+    margin-bottom:10px;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:10px;
+
+    overflow:hidden;
+
+    border-radius:50px;
+
+    background:#213b61;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    border-radius:50px;
+
+    animation:grow 1.8s ease;
+
+}
+
+.high{
+
+    background:var(--red);
+
+}
+
+.medium{
+
+    background:var(--orange);
+
+}
+
+.low{
+
+    background:var(--green);
+
+}
+
+@keyframes grow{
+
+    from{
+
+        width:0;
+
+    }
+
+}
+
+/*==================================================
+Weather
+==================================================*/
+
+.weather-card{
+
+    text-align:center;
+
+}
+
+.weather-card h1{
+
+    font-size:56px;
+
+    margin:18px 0;
+
+    color:var(--primary);
+
+}
+
+.weather-card p{
+
+    color:var(--muted);
+
+}
+
+.weather-info{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+.weather-info div{
+
+    padding:15px;
+
+    border-radius:14px;
+
+    background:#132744;
+
+}
+
+.weather-info strong{
+
+    display:block;
+
+    margin-top:8px;
+
+}
+
+/*==================================================
+System Status
+==================================================*/
+
+.system-card{
+
+    margin-top:28px;
+
+}
+
+.system-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.system-grid div{
+
+    text-align:center;
+
+    padding:28px;
+
+    border-radius:18px;
+
+    background:#132744;
+
+    transition:.35s;
+
+}
+
+.system-grid div:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 12px 30px rgba(0,212,255,.18);
+
+}
+
+.system-grid svg{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.warning{
+
+    color:var(--orange);
+
+    font-weight:600;
+
+}
+
+/*==================================================
+Floating Glow Animation
+==================================================*/
+
+.glass-card{
+
+    animation:floatCard 6s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-4px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/*==================================================
+Responsive
+==================================================*/
+
+@media(max-width:1200px){
+
+    .main-grid,
+
+    .bottom-layout,
+
+    .operations-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .signal-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .system-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .operator-topbar{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        align-items:flex-start;
+
+    }
+
+    .top-middle{
+
+        width:100%;
+
+    }
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:30px;
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .camera-grid,
+
+    .weather-info,
+
+    .signal-grid,
+
+    .system-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .operator-container{
+
+        padding:20px;
+
+    }
+
+    .hero{
+
+        padding:25px;
+
+    }
+
+    .hero h1{
+
+        font-size:30px;
+
+    }
+
+}
+
+.operator-page-content{
+
+    margin-left:285px;
+
+}
