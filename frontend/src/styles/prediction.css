@@ -1,0 +1,194 @@
+.prediction-page {
+  min-height: 100vh;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px 30px;
+  color: #eef6ff;
+}
+
+.prediction-page h1 {
+  margin: 0 0 8px;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.prediction-page > p {
+  margin: 0 0 28px;
+  color: #95a9c8;
+  line-height: 1.6;
+}
+
+.prediction-form,
+.prediction-result {
+  background: rgba(16, 25, 44, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), 0 15px 45px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(22px);
+}
+
+.prediction-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding: 28px;
+}
+
+.prediction-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #eef6ff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.prediction-form input,
+.prediction-form select {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  outline: none;
+  background: #13233f;
+  color: #eef6ff;
+  font: inherit;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.prediction-form input::placeholder {
+  color: #8da2c5;
+}
+
+.prediction-form input:focus,
+.prediction-form select:focus {
+  border-color: rgba(0, 212, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.12);
+}
+
+.prediction-form select option {
+  background: #13233f;
+  color: #eef6ff;
+}
+
+.checkbox-label {
+  flex-direction: row !important;
+  align-items: center;
+  align-self: end;
+  min-height: 48px;
+  gap: 10px !important;
+  padding: 0 4px;
+}
+
+.checkbox-label input {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  accent-color: #00d4ff;
+}
+
+.prediction-form button {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00f5d4, #00b4ff);
+  color: #07111f;
+  font: inherit;
+  font-weight: 700;
+  transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s;
+}
+
+.prediction-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(0, 245, 212, 0.35);
+}
+
+.prediction-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.prediction-error {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 77, 103, 0.35);
+  border-radius: 14px;
+  background: rgba(255, 77, 103, 0.1);
+  color: #ff9bab;
+  font-weight: 500;
+}
+
+.prediction-result {
+  margin-top: 24px;
+  padding: 26px 28px;
+}
+
+.prediction-result h2 {
+  margin: 0;
+  color: #eef6ff;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.prediction-result > p {
+  margin: 8px 0 20px;
+  color: #95a9c8;
+}
+
+.prediction-result.level-low { border-left: 5px solid #00ff95; }
+.prediction-result.level-medium { border-left: 5px solid #ffb100; }
+.prediction-result.level-high { border-left: 5px solid #ff4d67; }
+
+.probabilities {
+  display: grid;
+  gap: 12px;
+}
+
+.prob-row {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) 52px;
+  align-items: center;
+  gap: 12px;
+  color: #b7c4d4;
+  font-size: 13px;
+}
+
+.prob-row span:last-child {
+  text-align: right;
+}
+
+.prob-bar {
+  overflow: hidden;
+  height: 9px;
+  border-radius: 999px;
+  background: #13233f;
+}
+
+.prob-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #00f5d4, #00b4ff);
+}
+
+@media (max-width: 640px) {
+  .prediction-page {
+    padding: 36px 20px;
+  }
+
+  .prediction-page h1 {
+    font-size: 29px;
+  }
+
+  .prediction-form {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .checkbox-label {
+    align-self: auto;
+  }
+}

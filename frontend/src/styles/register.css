@@ -1,0 +1,284 @@
+.register-card{
+
+    width:1150px;
+    height:700px;
+
+    display:flex;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    background:rgba(15,20,28,.55);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 0 80px rgba(0,255,255,.08);
+
+    position:relative;
+
+    animation:floatCard 6s ease-in-out infinite;
+
+}
+
+.register-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:80%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:shine 6s infinite;
+
+}
+
+.register-left{
+
+    width:45%;
+
+    padding:70px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.register-badge{
+
+    width:max-content;
+
+    padding:10px 20px;
+
+    border-radius:40px;
+
+    color:#3CE5E5;
+
+    background:rgba(0,255,255,.08);
+
+    border:1px solid rgba(0,255,255,.2);
+
+    margin-bottom:35px;
+
+    letter-spacing:1px;
+
+}
+
+.register-left h1{
+
+    font-size:58px;
+
+    line-height:68px;
+
+}
+
+.register-left p{
+
+    margin-top:30px;
+
+    color:#95A1AF;
+
+    font-size:18px;
+
+    line-height:30px;
+
+}
+
+.register-right{
+
+    width:55%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:70px;
+
+}
+
+.register-right h2{
+
+    font-size:38px;
+
+    margin-bottom:35px;
+
+}
+
+.register-right input,
+.register-right select{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-bottom:18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:#11161D;
+
+    color:white;
+
+    font-size:16px;
+
+    transition:.35s;
+
+}
+
+.register-right select{
+
+    cursor:pointer;
+
+}
+
+.register-right input:focus,
+.register-right select:focus{
+
+    box-shadow:0 0 20px #00FFFF;
+
+    transform:scale(1.02);
+
+}
+
+.register-right button{
+
+    margin-top:10px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:linear-gradient(
+        90deg,
+        #00D5FF,
+        #00FFD5
+    );
+
+    color:#000;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.register-right button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 30px cyan;
+
+}
+
+.register-right button:active{
+
+    transform:scale(.96);
+
+}
+
+.bottom-text{
+
+    margin-top:28px;
+
+    text-align:center;
+
+    color:#96A3B1;
+
+}
+
+.bottom-text a{
+
+    color:#3CE5E5;
+
+    font-weight:600;
+
+}
+
+.bottom-text a:hover{
+
+    text-shadow:0 0 10px cyan;
+
+}
+
+@media(max-width:1100px){
+
+.register-card{
+
+    width:95%;
+
+    height:auto;
+
+    flex-direction:column;
+
+}
+
+.register-left,
+.register-right{
+
+    width:100%;
+
+}
+
+.register-left{
+
+    padding-bottom:20px;
+
+}
+
+.register-left h1{
+
+    font-size:42px;
+
+    line-height:50px;
+
+}
+
+}
+
+.register-card::before {
+    pointer-events: none;
+}
+
+.register-left,
+.register-right {
+    position: relative;
+    z-index: 2;
+}
+
+.register-card {
+    z-index: 9999;
+}
+
+.register-right {
+    z-index: 9999;
+}
