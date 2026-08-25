@@ -1,0 +1,277 @@
+.layout{
+
+    min-height:100vh;
+
+    width:100%;
+
+    background:#070B12;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+/* ===========================
+   Animated Grid
+=========================== */
+
+.grid{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        linear-gradient(
+
+            rgba(255,255,255,.04) 1px,
+
+            transparent 1px
+
+        ),
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(255,255,255,.04) 1px,
+
+            transparent 1px
+
+        );
+
+    background-size:50px 50px;
+
+    opacity:.22;
+
+    animation:gridMove 18s linear infinite;
+
+}
+
+@keyframes gridMove{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(50px,50px);
+
+    }
+
+}
+
+/* ===========================
+   Aurora Blobs
+=========================== */
+
+.blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(140px);
+
+    opacity:.55;
+
+}
+
+.blob1{
+
+    width:500px;
+
+    height:500px;
+
+    left:-150px;
+
+    top:-120px;
+
+    background:#00F5D4;
+
+    animation:blob1 16s infinite alternate ease-in-out;
+
+}
+
+.blob2{
+
+    width:420px;
+
+    height:420px;
+
+    right:-120px;
+
+    top:180px;
+
+    background:#8B5CF6;
+
+    animation:blob2 18s infinite alternate ease-in-out;
+
+}
+
+.blob3{
+
+    width:350px;
+
+    height:350px;
+
+    bottom:-80px;
+
+    left:40%;
+
+    background:#00B4FF;
+
+    animation:blob3 20s infinite alternate ease-in-out;
+
+}
+
+@keyframes blob1{
+
+    from{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    to{
+
+        transform:translate(140px,80px) scale(1.35);
+
+    }
+
+}
+
+@keyframes blob2{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-150px,-80px);
+
+    }
+
+}
+
+@keyframes blob3{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-120px,-120px) scale(1.25);
+
+    }
+
+}
+
+/* ===========================
+   Noise Layer
+=========================== */
+
+.noise{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.03;
+
+    background-image:
+
+        radial-gradient(
+
+            white 1px,
+
+            transparent 1px
+
+        );
+
+    background-size:7px 7px;
+
+}
+
+/* ===========================
+   Content
+=========================== */
+
+.content{
+
+    position:relative;
+
+    z-index:5;
+
+    margin-left:315px;
+
+    padding:
+
+        125px
+
+        30px
+
+        30px
+
+        30px;
+
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#00F5D4;
+
+}
+
+@media(max-width:992px){
+
+    .content{
+
+        margin-left:20px;
+
+        margin-right:20px;
+
+    }
+
+}
