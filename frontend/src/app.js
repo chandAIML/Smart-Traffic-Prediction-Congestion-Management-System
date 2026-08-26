@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdminDashboard from "./pages/admin/Dashboard";
 import Analytics from "./pages/admin/Analytics";
+import Reports from "./pages/admin/Reports";
 import OperatorDashboard from "./pages/OperatorDashboard";
 import CommuterDashboard from "./pages/CommuterDashboard";
 import Prediction from "./pages/Prediction";
@@ -93,6 +94,15 @@ function App() {
         element={
           <ProtectedRoute role="admin">
             <Analytics />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/reports"
+        element={
+          <ProtectedRoute role="admin">
+            <Reports />
           </ProtectedRoute>
         }
       />
